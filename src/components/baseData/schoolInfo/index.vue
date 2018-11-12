@@ -41,7 +41,6 @@ export default {
   },
   created(){
   	this.findAllSchoolInfo({id:3}).then((data)=>{
-  		// data-->schoolInfo
   		this.form = {
   			id:data.id,
   			name:data.name,
@@ -90,7 +89,6 @@ export default {
   .schoolInfo{
   	table{
 	  	width: 100%;
-	  	border:1px solid black;
 	  	border-collapse: collapse;
 	  	tr{
 	  		border:1px solid black;

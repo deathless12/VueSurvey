@@ -56,7 +56,8 @@
 		      	<i v-if="scope.row.status=='未开启'" class="fa fa-play" title="开启" style="color:blue" @click="handleBegin(scope.$index, scope.row)"></i>
 		      	<i v-if="scope.row.status=='开启'" class="fa fa-hourglass-start" title="查看进度" style="color:green" @click="handleProgress(scope.$index, scope.row)"></i>
 		      	<i v-if="scope.row.status=='开启'" class="fa fa-stop-circle-o" title="结束" style="color:red" @click="handleStop(scope.$index, scope.row)"></i>
-		      	<el-button type="success" round disabled size="mini" v-else>已完成</el-button>
+		      	<el-button type="success" round disabled size="mini" v-if="scope.row.status=='审核通过' || scope.row.status=='审核不通过'">已完成</el-button>
+		      	<el-button type="success" round disabled size="mini" v-if="scope.row.status=='未审核'">未审核</el-button>
 		      </template>
 		    </el-table-column>
 	    </el-table>

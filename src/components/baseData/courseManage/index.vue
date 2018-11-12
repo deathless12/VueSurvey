@@ -12,7 +12,7 @@
 	    :data="courseList"
 	    tooltip-effect="dark"
 	    style="width: 100%" border
-	    @selection-change="handleSelectionChange" height="520px">
+	    @selection-change="handleSelectionChange" :height="tableHeight">
 	    <el-table-column
 	      type="selection"
 	      width="55" align="center">
@@ -60,6 +60,7 @@
 
 <script>
 import {mapGetters,mapActions} from 'vuex';
+import $ from 'jquery';
 export default {
   data(){
     return {
@@ -97,6 +98,7 @@ export default {
     ...mapGetters(['courses']),
   },
   created(){
+    this.tableHeight = $(window).height()-194;
   	this.findAllCourse().then().catch();	
   },
   methods:{

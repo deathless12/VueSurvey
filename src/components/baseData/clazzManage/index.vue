@@ -20,7 +20,7 @@
 	    :data="clazzVMList"
 	    tooltip-effect="dark"
 	    style="width: 100%" border
-	    @selection-change="handleSelectionChange" height="520px">
+	    @selection-change="handleSelectionChange" :height="tableHeight">
 	    <el-table-column
 	      type="selection"
 	      width="55" align="center">
@@ -85,6 +85,7 @@
 
 <script>
 import {mapGetters,mapActions} from 'vuex';
+import $ from 'jquery';
 export default {
   data(){
     return {
@@ -117,7 +118,8 @@ export default {
   	let vm = this;
   	this.findAllGrade().then().catch();
   	this.findAllTeacher();
-  	this.findAllClazzVM().then().catch();	
+  	this.findAllClazzVM().then().catch();
+    this.tableHeight = $(window).height()-194;	
   },
   methods:{
     // 批量删除

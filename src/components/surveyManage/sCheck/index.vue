@@ -55,7 +55,8 @@
 		      <template slot-scope="scope">
 		      	<i v-if="scope.row.status=='未审核'" class="fa fa-check" title="审核通过" style="color:blue" @click="handleCheck(scope.$index, scope.row,1)"></i>
 		      	<i v-if="scope.row.status=='未审核'" class="fa fa-times" title="审核不通过" style="color:green" @click="handleCheck(scope.$index, scope.row,0)"></i>
-		      	<el-button type="primary" round disabled size="mini" v-else>已审核</el-button>
+		      	<el-button type="primary" round disabled size="mini" v-if="scope.row.status=='审核通过' || scope.row.status=='审核不通过'">已审核</el-button>
+            <el-button type="primary" round disabled size="mini" v-if="scope.row.status=='开启'">未完成课调</el-button>
 		      </template>
 		    </el-table-column>
 	    </el-table>
