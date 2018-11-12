@@ -65,7 +65,7 @@ export default {
 <style>
 	.el-menu{
 		border-right:0;
-		background:none;
+		background:#e1e1e1;
 	}
 </style>
 <style scoped lang="scss">
